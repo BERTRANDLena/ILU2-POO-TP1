@@ -21,6 +21,30 @@ public class Village {
 	public void setChef(Chef chef) {
 		this.chef = chef;
 	}
+	
+	private class Marche{
+		private Etal[] etals;
+		
+		private Marche(int nbEtals) {
+			etals = new Etal[nbEtals];
+			for (int i=0; i < nbEtals; i++) {
+				etals[i] = new Etal();
+			}
+		}
+		
+		private void utiliserEtal(int indiceEtal, Gaulois vendeur, String produit, int nbProduit) {
+			etals[indiceEtal].occuperEtal(vendeur, produit, nbProduit); 
+		}
+		
+		private int trouverEtalLibre() {
+			for (int i=0; i<etals.length; i++) {
+				if (!etals[i].isEtalOccupe()) {
+					return i;
+				}				
+			}
+			return -1;
+		}
+	}
 
 	public void ajouterHabitant(Gaulois gaulois) {
 		if (nbVillageois < villageois.length) {
@@ -49,7 +73,7 @@ public class Village {
 					+ chef.getNom() + ".\n");
 		} else {
 			chaine.append("Au village du chef " + chef.getNom()
-					+ " vivent les lÃ©gendaires gaulois :\n");
+					+ " vivent les légendaires gaulois :\n");
 			for (int i = 0; i < nbVillageois; i++) {
 				chaine.append("- " + villageois[i].getNom() + "\n");
 			}

@@ -13,8 +13,8 @@ public class Scenario {
 //		Chef abraracourcix = new Chef("Abraracourcix", 10, village);
 //		village.setChef(abraracourcix);
 		Druide druide = new Druide("Panoramix", 2, 5, 10);
-		Gaulois obelix = new Gaulois("ObÃ©lix", 25);
-		Gaulois asterix = new Gaulois("AstÃ©rix", 8);
+		Gaulois obelix = new Gaulois("Obélix", 25);
+		Gaulois asterix = new Gaulois("Astérix", 8);
 		Gaulois assurancetourix = new Gaulois("Assurancetourix", 2);
 		Gaulois bonemine = new Gaulois("Bonemine", 7);
 		
