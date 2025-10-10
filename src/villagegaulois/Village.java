@@ -77,6 +77,23 @@ public class Village {
 			return null;
 		}
 		
+		private String afficherMarche() {
+			String resultat = "";
+			int nbEtalVide = 0;
+			
+			for (int i=0; i<etals.length; i++) {
+				if (etals[i].isEtalOccupe()) {
+					resultat += etals[i].afficherEtal();
+					resultat += "\n";
+				}else {
+					nbEtalVide ++;
+				}
+			}
+			resultat += "Il reste" + nbEtalVide + "étals non utilisés dans le marché.\n";
+			
+			return resultat;
+		}
+		
 		
 			
 	}
