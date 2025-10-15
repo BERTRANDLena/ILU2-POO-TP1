@@ -2,9 +2,6 @@ package histoire;
 
 import personnages.Gaulois;
 import villagegaulois.Etal;
-import villagegaulois.Village;
-import personnages.Chef;
-import personnages.Druide;
 
 public class ScenarioCasDegrade {
 
@@ -13,13 +10,23 @@ public class ScenarioCasDegrade {
 		etal.libererEtal();
 		etal.acheterProduit(3, null);
 		
-		Gaulois acheteur = new Gaulois("asterix", 26);
+		Gaulois acheteur1 = new Gaulois("asterix", 26);
+		Gaulois acheteur2 = new Gaulois("obelix", 26);
 		
 		try {
-			etal.acheterProduit(-2, acheteur);
-		}catch(IllegalArgumentException e) {
-			System.out.println("La quantitÈ est infÈrieure ‡ 1.");
+			etal.acheterProduit(3, acheteur2);
+		} catch(IllegalStateException e) {
+			System.out.println("L'Etal n'est pas occup√©.");
 		}
+		
+		etal.occuperEtal(acheteur1, "pommes", 10);
+		
+		try {
+			etal.acheterProduit(-2, acheteur1);
+		}catch(IllegalArgumentException e) {
+			System.out.println("La quantit√© est inf√©rieure √† 1.\n");
+		}
+		
 		System.out.println("Fin du test");
 	}
 }
