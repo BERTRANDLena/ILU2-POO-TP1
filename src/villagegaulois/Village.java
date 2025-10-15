@@ -81,20 +81,19 @@ public class Village {
 		}
 		
 		private String afficherMarche() {
-			String resultat = "";
+			StringBuilder chaine = new StringBuilder();
 			int nbEtalVide = 0;
 			
 			for (int i=0; i<etals.length; i++) {
 				if (etals[i].isEtalOccupe()) {
-					resultat += etals[i].afficherEtal();
-					resultat += "\n";
+					chaine.append(etals[i].afficherEtal() + "\n");
 				}else {
 					nbEtalVide ++;
 				}
 			}
-			resultat += "Il reste" + nbEtalVide + "Ã©tals non utilisÃ©s dans le marchÃ©.\n";
+			chaine.append("Il reste" + nbEtalVide + "Etals non utilisés dans le marché.\n");
 			
-			return resultat;
+			return chaine.toString();
 		}	
 	}
 	

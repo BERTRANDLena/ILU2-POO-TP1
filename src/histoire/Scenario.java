@@ -18,7 +18,6 @@ public class Scenario {
 		Gaulois assurancetourix = new Gaulois("Assurancetourix", 2);
 		Gaulois bonemine = new Gaulois("Bonemine", 7);
 		
-		
 		village.ajouterHabitant(bonemine);
 		village.ajouterHabitant(assurancetourix);
 		village.ajouterHabitant(asterix);
