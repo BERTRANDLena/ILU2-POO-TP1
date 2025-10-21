@@ -1,6 +1,8 @@
 package histoire;
 
 import personnages.Gaulois;
+import villagegaulois.Village;
+import villagegaulois.VillageSansChefException;
 import villagegaulois.Etal;
 
 public class ScenarioCasDegrade {
@@ -25,6 +27,14 @@ public class ScenarioCasDegrade {
 			etal.acheterProduit(-2, acheteur1);
 		}catch(IllegalArgumentException e) {
 			System.out.println("La quantité est inférieure à 1.\n");
+		}
+		
+		Village village = new Village("Village",10,5);
+		
+		try {
+			System.out.println(village.afficherVillageois());
+		} catch (VillageSansChefException e) {
+			e.printStackTrace();
 		}
 		
 		System.out.println("Fin du test");

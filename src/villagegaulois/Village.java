@@ -91,7 +91,7 @@ public class Village {
 					nbEtalVide ++;
 				}
 			}
-			chaine.append("Il reste" + nbEtalVide + "Etals non utilisés dans le marché.\n");
+			chaine.append("Il reste" + nbEtalVide + "Etals non utilisï¿½s dans le marchï¿½.\n");
 			
 			return chaine.toString();
 		}	
@@ -164,7 +164,10 @@ public class Village {
 		return null;
 	}
 
-	public String afficherVillageois() {
+	public String afficherVillageois() throws VillageSansChefException {
+		if (chef == null) {
+			throw new VillageSansChefException("Le Village n'a pas de chef.");
+		}
 		StringBuilder chaine = new StringBuilder();
 		if (nbVillageois < 1) {
 			chaine.append("Il n'y a encore aucun habitant au village du chef "
